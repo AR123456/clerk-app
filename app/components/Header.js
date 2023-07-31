@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 const Header = () => {
   return (
-    <div>
+    <>
       <nav className="bg-blue-700 py-4 px-6 flex items-center justify-between mb-5">
         <div className="flex items-center">
           <Link href="">
@@ -12,7 +12,7 @@ const Header = () => {
           </Link>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 
