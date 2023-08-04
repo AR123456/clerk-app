@@ -1,13 +1,13 @@
 import React from "react";
-import { SignIn } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   return (
     <>
       {/* this is the clerk.js developed component */}
-      <SignIn></SignIn>
+      <SignUp></SignUp>
     </>
   );
 };
 
-export default SignInPage;
+export default SignUpPage;
