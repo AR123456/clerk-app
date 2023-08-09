@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-// using clerks content to show different header if loggedin
-import { auth } from "@clerk/nextjs";
+// using clerks content to show different header if loggedin and their user button
+import { UserButton, auth } from "@clerk/nextjs";
 
 const Header = () => {
   const { userId } = auth();
@@ -35,6 +35,10 @@ const Header = () => {
               </Link>
             </>
           )}
+          <div className="ml-auto">
+            {/*  */}
+            <UserButton />
+          </div>
         </div>
       </nav>
     </>
