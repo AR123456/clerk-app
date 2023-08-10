@@ -36,8 +36,8 @@ const Header = () => {
             </>
           )}
           <div className="ml-auto">
-            {/*  */}
-            <UserButton />
+            {/* if the user has an avitar on the account they used to sign in it will show as userbutton */}
+            <UserButton afterSignOutUrl="/" />
           </div>
         </div>
       </nav>
