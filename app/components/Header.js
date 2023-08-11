@@ -35,6 +35,14 @@ const Header = () => {
               </Link>
             </>
           )}
+          {userId && (
+            <Link
+              href="profile"
+              className="text-gray-300 hover:text-white mr-4"
+            >
+              Profile
+            </Link>
+          )}
           <div className="ml-auto">
             {/* if the user has an avitar on the account they used to sign in it will show as userbutton */}
             <UserButton afterSignOutUrl="/" />
