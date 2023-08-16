@@ -32,6 +32,7 @@ const RegisterPage = () => {
       <div className="border p-5 rounded" style={{ width: "500px" }}>
         {" "}
         <h1 className="text-2xl mb-4"> Register</h1>
+        {/* not the situation where user signed up and has now been sent code to verify */}
         {!pendingVerification && (
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div>
@@ -106,6 +107,26 @@ const RegisterPage = () => {
               Create an account
             </button>
           </form>
+        )}
+        {/* form to submit verify code */}
+        {pendingVerification && (
+          <div>
+            <form className="space-y-4 md:space-y-6">
+              <input
+                value={code}
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
+                placeholder="Enter Verification Code..."
+                onChange={(e) => setCode(e.target.value)}
+              />
+              <button
+                type="submit"
+                onClick={onPressVerify}
+                className="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              >
+                Verify Email
+              </button>
+            </form>
+          </div>
         )}
       </div>
     </>
