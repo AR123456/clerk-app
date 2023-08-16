@@ -23,7 +23,24 @@ const RegisterPage = () => {
   const router = useRouter();
 
   // Form submit
-  const handleSubmit = async (e) => {};
+  const handleSubmit = async (e) => {
+    e.eventDefault();
+    if (!isLoaded) {
+      return;
+    }
+    try {
+      await signUp.create({
+        // get from state
+        first_name: firstName,
+        last_name: lastName,
+        email_address: email,
+        password,
+      });
+      // Send mail
+    } catch (error) {
+      console.log(error);
+    }
+  };
   //Verify User Email Code
   const onPressVerify = async (e) => {};
 
