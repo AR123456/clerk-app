@@ -18,7 +18,7 @@ const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
-  const [pendingVerification, setPendingVerification] = useState(false);
+  const [pendingVerification, setPendingVerification] = useState(true);
   const [code, setCode] = useState("");
   const router = useRouter();
 
@@ -37,6 +37,12 @@ const RegisterPage = () => {
         password,
       });
       // Send mail
+      await signUp.prepareEmailAddressVerification({
+        // strategy object email link or email code
+        strategy: "email_code",
+      });
+      // present form to enter coded to user
+      setPendingVerification(true);
     } catch (error) {
       console.log(error);
     }
