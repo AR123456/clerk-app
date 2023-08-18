@@ -48,6 +48,7 @@ const RegisterPage = () => {
     }
   };
   //Verify User Email Code
+  // Verify User Email Code
   const onPressVerify = async (e) => {
     e.preventDefault();
     if (!isLoaded) {
@@ -58,14 +59,15 @@ const RegisterPage = () => {
         code,
       });
       if (completeSignUp.status !== "complete") {
-        // was there an error or does user need to do something
+        /*  investigate the response, to see if there was an error
+         or if the user needs to complete more steps.*/
         console.log(JSON.stringify(completeSignUp, null, 2));
       }
-      if (completedSignUp.status === "complete") {
+      if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
         router.push("/");
       }
-    } catch (error) {
+    } catch (err) {
       console.error(JSON.stringify(err, null, 2));
     }
   };
