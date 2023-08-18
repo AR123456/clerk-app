@@ -61,7 +61,9 @@ const RegisterPage = () => {
         // was there an error or does user need to do something
         console.log(JSON.stringify(completeSignUp, null, 2));
       }
-      if (condition) {
+      if (completedSignUp.status === "complete") {
+        await setActive({ session: completeSignUp.createdSessionId });
+        router.push("/");
       }
     } catch (error) {
       console.error(JSON.stringify(err, null, 2));
