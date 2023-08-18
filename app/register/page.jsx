@@ -18,7 +18,7 @@ const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
-  const [pendingVerification, setPendingVerification] = useState(true);
+  const [pendingVerification, setPendingVerification] = useState(false);
   const [code, setCode] = useState("");
   const router = useRouter();
 
@@ -48,7 +48,17 @@ const RegisterPage = () => {
     }
   };
   //Verify User Email Code
-  const onPressVerify = async (e) => {};
+  const onPressVerify = async (e) => {
+    e.preventDefault();
+    if (!isLoaded) {
+      return;
+    }
+    try {
+      // finish sign up
+    } catch (error) {
+      console.error(JSON.stringify(err, null, 2));
+    }
+  };
 
   return (
     <>
